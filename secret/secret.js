@@ -1,12 +1,15 @@
 const dotenv = require("dotenv");
 
 dotenv.config({
-    path:"./secret/.env"
-})
+  path: "./secret/.env",
+});
 
 const port = process.env.PORT || "5000";
 
-const mongoURI = process.env.MONGO_URI || "mongodb://localhost:27017/myportfolio";
+const backendUrl = process.env.BACKEND_URL;
+
+const mongoURI =
+  process.env.MONGO_URI || "mongodb://localhost:27017/myportfolio";
 
 const jwtSecretKey = process.env.JWT_SECRET_KEY;
 
@@ -20,14 +23,14 @@ const cloudinaryAPISecret = process.env.CLOUDINARY_API_SECRET;
 
 const cloudinaryCloudName = process.env.CLOUDINARY_CLOUD_NAME;
 
-
 module.exports = {
-    port,
-    mongoURI,
-    jwtSecretKey,
-    smtpPassword,
-    smtpUserName,
-    cloudinaryAPIKey,
-    cloudinaryAPISecret,
-    cloudinaryCloudName,
-}
+  port,
+  mongoURI,
+  jwtSecretKey,
+  smtpPassword,
+  backendUrl,
+  smtpUserName,
+  cloudinaryAPIKey,
+  cloudinaryAPISecret,
+  cloudinaryCloudName,
+};
